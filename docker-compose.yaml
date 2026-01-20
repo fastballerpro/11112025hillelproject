@@ -1,0 +1,21 @@
+services:
+  backend:
+    container_name: backend
+    hostname: backend
+    build:
+      dockerfile: Dockerfile
+      context: ./backend
+    volumes:
+      - ./backend/app:/app
+    ports:
+      - "19999:8000"
+    command: |
+      sh -c "
+      uv run -m uvicorn main:app --host "0.0.0.0" --reload 
+      "
+    networks:
+      - main_network
+
+networks:
+  main_network:
+    driver: bridge

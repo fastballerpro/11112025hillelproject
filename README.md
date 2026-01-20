@@ -1,12 +1,10 @@
 # 11112025hillelproject
-windows:
+# Windows:
+/backend     uv init
+/backend     uv add fastapi[standard]
+/backend/app           uv run -m uvicorn main:app --reload
 
-uv init
-
-uv add fastapi[standard]
-
-mac:
-
-uv init
-
-uv add "fastapi[standard]"
+# MacOS:
+/backend     uv init
+/backend     uv add "fastapi[standard]"
+/backend/app           uv run -m uvicorn main:app --reload
