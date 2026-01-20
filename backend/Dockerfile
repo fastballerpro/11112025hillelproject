@@ -11,7 +11,7 @@ RUN curl -LsSf https://astral.sh/uv/install.sh | sh \
     && mv /root/.local/bin/uvx /usr/local/bin/uvx
 
 COPY pyproject.toml uv.lock /app/
-RUN uv sync
+RUN uv pip install --system --no-cache .
 
 COPY /app /app
 
