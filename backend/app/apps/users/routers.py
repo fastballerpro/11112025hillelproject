@@ -3,6 +3,7 @@ from fastapi import APIRouter, status
 from apps.auth.password_handler import PasswordHandler
 from apps.users.schemas import RegisterUserSchema, UserBaseFieldsSchemas
 
+
 users_router = APIRouter()
 
 
