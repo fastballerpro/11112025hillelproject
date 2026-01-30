@@ -3,15 +3,11 @@ from apps.users.routers import users_router
 
 
 def get_application() -> FastAPI:
-    app = FastAPI()
+    _app = FastAPI()
 
-    app.include_router(
-        users_router,
-        prefix="/users",
-        tags=["users"],
-    )
+    _app.include_router(users_router, prefix="/users", tags=["users"])
 
-    return app
+    return _app
 
 
 app = get_application()
