@@ -14,6 +14,7 @@ class DatabaseSettings(BaseSettings):
         return (f'postgresql+asyncpg://{self.PGUSER}:{self.PGPASSWORD}@{self.PGHOST}:{self.PGPORT}/{self.PGDATABASE}?'
                 f'sslmode=require&channel_binding=require')
 
+
 class Settings(BaseSettings):
     DEBUG: bool = False
 
