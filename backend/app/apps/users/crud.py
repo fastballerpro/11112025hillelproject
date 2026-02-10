@@ -1,6 +1,7 @@
+from apps.users.schemas import RegisterUserSchema, UserBaseFieldsSchemas
 from apps.auth.password_handler import PasswordHandler
 from apps.users.models import User
-from apps.users.schemas import RegisterUserSchema, UserBaseFieldsSchemas
+
 
 
 class UserManager:
