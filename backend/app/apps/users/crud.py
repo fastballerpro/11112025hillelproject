@@ -8,7 +8,7 @@ from fastapi import HTTPException, status
 class UserManager:
     async def create_user(self, session, user_register_data: RegisterUserSchema):
         maybe_user = await self.get(session=session, user_email=user_register_data.email)
-        if not maybe_user:
+        if maybe_user:
            raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=f'User with email {user_register_data.email} already exists')
         
         hashed_password = await PasswordHandler.get_password_hash(user_register_data.password)
