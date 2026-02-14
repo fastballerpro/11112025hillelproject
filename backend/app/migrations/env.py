@@ -3,7 +3,7 @@ from logging.config import fileConfig
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
-from apps.users.models import User
+from apps.users.models import User, Note
 from apps.core.base_model import Base
 from settings import settings
 
